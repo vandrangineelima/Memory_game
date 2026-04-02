@@ -1,8 +1,5 @@
 # 🎮 Memory Card Game
 
-## 🔗 Live Website
-[Click here to play the game](https://yourusername.github.io/MemoryCardGame/)
-
 ---
 
 ## 📌 Project Description
