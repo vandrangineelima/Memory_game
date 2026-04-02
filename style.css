@@ -1,0 +1,220 @@
+/* --------------------------- Body & Global --------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e0f7fa; /* Light mode background */
+  color: #079a8b;       /* Light mode text */
+  padding: 20px;
+  transition: background 0.5s, color 0.5s;
+}
+
+
+body.dark-mode {
+  background: #1e1e1e; /* Dark mode background */
+  color: #e0f7fa;       /* Dark mode text */
+}
+
+/* --------------------------- Title --------------------------- */
+h1 {
+  color: inherit;
+  margin-bottom: 10px;
+}
+
+/* --------------------------- Controls --------------------------- */
+.controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+button, select {
+  padding: 8px 15px;
+  background-color: #079a8b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.5s, color 0.5s;
+}
+
+button:hover, select:hover {
+  background-color: #056d63;
+}
+
+body.dark-mode button,
+body.dark-mode select {
+  background-color: #333;
+  color: #e0f7fa;
+}
+
+body.dark-mode button:hover,
+body.dark-mode select:hover {
+  background-color: #555;
+}
+
+/* --------------------------- Info Panel --------------------------- */
+.info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info p {
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+/* --------------------------- Game Container --------------------------- */
+.game-container {
+  display: grid;
+  grid-gap: 15px;
+  justify-content: center;
+  border: 3px solid #079a8b; /* Bold border around cards grid */
+  padding: 15px;
+  border-radius: 15px;
+  transition: border-color 0.5s;
+}
+
+body.dark-mode .game-container {
+  border-color: #e0f7fa;
+}
+
+/* --------------------------- Card Styles --------------------------- */
+.card {
+  width: 110px;      /* Slightly bigger */
+  height: 110px;
+  perspective: 600px; /* 3D flip */
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  transition: background 0.5s, color 0.5s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Front of the card (hidden number side) */
+.card-front {
+  background-color: #079a8b;
+  color: white;
+}
+
+/* Back of the card (visible number) */
+.card-back {
+  background-color: #fff;
+  color: #079a8b;
+  transform: rotateY(180deg);
+}
+
+/* Dark mode cards */
+body.dark-mode .card-front {
+  background-color: #333;
+  color: #e0f7fa;
+}
+
+body.dark-mode .card-back {
+  background-color: #555;
+  color: #e0f7fa;
+}
+
+/* --------------------------- Message --------------------------- */
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #079a8b;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+body.dark-mode .message {
+  color: #e0f7fa;
+}
+
+/* ===================== PURE PURPLE GALAXY THEME ===================== */
+
+body.dark-mode {
+  background: radial-gradient(circle at top, #1b002e, #090012);
+  color: #f2ddff;
+}
+
+/* Controls */
+body.dark-mode button,
+body.dark-mode select {
+  background-color: #2a0045;
+  color: #f2ddff;
+  border: 1px solid #d48bff;
+}
+
+body.dark-mode button:hover,
+body.dark-mode select:hover {
+  background-color: #3d0066;
+}
+
+/* Game container */
+body.dark-mode .game-container {
+  border: 3px solid #d48bff;
+  box-shadow: 0 0 20px #d48bff88;
+}
+
+/* Card front */
+body.dark-mode .card-front {
+  background: linear-gradient(145deg, #2a0045, #3d0066);
+  color: #ffd6ff;
+  box-shadow: 
+    inset 0 0 10px #ffffff22,
+    0 0 18px #d48bff66;
+}
+
+/* Card back */
+body.dark-mode .card-back {
+  background: linear-gradient(145deg, #3d0066, #52008a);
+  color: #ffffff;
+  box-shadow: 
+    inset 0 0 12px #ffffff22,
+    0 0 22px #d48bffaa;
+}
+
+/* Info text */
+body.dark-mode .info p {
+  color: #f2ddff;
+}
+
+/* Win message */
+body.dark-mode .message {
+  color: #d48bff;
+  text-shadow: 0 0 12px #d48bff;
+}
+
+/* Hover glow */
+body.dark-mode .card:hover .card-front {
+  box-shadow: 
+    inset 0 0 14px #ffffff33,
+    0 0 26px #d48bffcc;
+}
